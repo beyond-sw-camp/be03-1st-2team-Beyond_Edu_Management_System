@@ -24,6 +24,31 @@ CREATE TABLE `teacher` (
     `contract_end` DATE NOT NULL,
     `status` ENUM('등록', '휴직', '계약종료') NOT NULL
 );
+
+-- 관리자 테이블 수정
+CREATE TABLE `manager` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `registration_number` VARCHAR(50) NOT NULL UNIQUE,
+    `phone_number` VARCHAR(50) NOT NULL,
+    `experience` ENUM('신입', '경력') NOT NULL,
+    `work` ENUM('기수', '야간', '상담') NOT NULL,
+    `contract_start` DATETIME NOT NULL,
+    `contract_end` DATETIME NOT NULL,
+    `status` ENUM('근무', '연차', '휴직', '퇴직', '기타') DEFAULT '근무'
+);
+-- 수업 테이블 수정
+CREATE TABLE `class` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `student_id` BIGINT NOT NULL,
+    `teacher_id` BIGINT NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
+    `start_time` DATETIME NOT NULL,
+    `end_time` DATETIME NOT NULL,
+    FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
+    FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)
+);
+
 -- 도서 테이블 수정
 CREATE TABLE `book` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
