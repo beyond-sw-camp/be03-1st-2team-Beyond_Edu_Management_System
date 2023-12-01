@@ -6,11 +6,15 @@
 ![image](https://velog.velcdn.com/images/dhkdtld37/post/2cf0e364-af22-4f2b-9d37-071213f1eaca/image.PNG)
 
 
+
+
 ## 📢 프로젝트 소개
 ```
 Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리를 위한 효율적인 인적자원 관리 시스템입니다.
 이 시스템은 수강생, 강사, 매니저 등 다양한 역할을 가진 사용자들을 위한 종합적인 데이터베이스를 제공하여 학원 운영을 지원합니다.
 ```
+
+
 
 ## 💡 프로젝트 목표
 ```
@@ -21,9 +25,13 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 5. 상담 및 커뮤니케이션: 매니저와 수강생 간의 상담을 관리하고, 효율적인 커뮤니케이션을 지원합니다.
 ```
 
+
+
 ## 📆 개발 일정
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/f89d1e73-ac59-4dc0-8607-c43977db30eb)
+
+
 
 ## 📝 요구사항 명세서
 
@@ -101,12 +109,16 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
   - 상담날짜는 년,월,일,시,분으로 표현한다.
 
 ```
+
+
+
 ## 🔍 Data_Modeling
 
 ### 1. ERD
 
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/1fe9e932-75e4-471b-9487-e161b1885f69)
+
 
 
 ## 🖥️ Queries 
@@ -212,5 +224,7 @@ CREATE TABLE `counsel` (
     FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`)
 );
 ```
+
+
 
 ### 2. 데이터 추가 쿼리(DML)
