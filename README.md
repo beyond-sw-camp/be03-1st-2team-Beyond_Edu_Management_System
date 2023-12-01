@@ -1,12 +1,12 @@
 
-# <center>Beyond Edu Management System</center>
+> # <center>Beyond Edu Management System</center>
 
 
 
 ![image](https://velog.velcdn.com/images/dhkdtld37/post/2cf0e364-af22-4f2b-9d37-071213f1eaca/image.PNG)
 
 
-## 📃 프로젝트 소개
+## 📢 프로젝트 소개
 ```
 Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리를 위한 효율적인 인적자원 관리 시스템입니다.
 이 시스템은 수강생, 강사, 매니저 등 다양한 역할을 가진 사용자들을 위한 종합적인 데이터베이스를 제공하여 학원 운영을 지원합니다.
@@ -21,11 +21,11 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 5. 상담 및 커뮤니케이션: 매니저와 수강생 간의 상담을 관리하고, 효율적인 커뮤니케이션을 지원합니다.
 ```
 
-## 개발 일정
+## 📆 개발 일정
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/f89d1e73-ac59-4dc0-8607-c43977db30eb)
 
-## 요구사항 명세서
+## 📝 요구사항 명세서
 
 ```sh
 요구사항 명세서
@@ -101,7 +101,7 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
   - 상담날짜는 년,월,일,시,분으로 표현한다.
 
 ```
-## 🔍 Modeling
+## 🔍 Data_Modeling
 
 ### 1. ERD
 
@@ -109,5 +109,108 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/1fe9e932-75e4-471b-9487-e161b1885f69)
 
 
-queries : DDL, DML, DCL
+## 🖥️ Queries 
 
+### 1. 테이블 생성 쿼리문(DDL)
+
+```sql
+-- 수강생 테이블
+CREATE TABLE `student` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `registration_number` VARCHAR(50) NOT NULL UNIQUE,
+    `phone_number` VARCHAR(50) NOT NULL,
+    `address` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `major` ENUM('전공', '비전공') NOT NULL,
+    `generation` VARCHAR(50) NOT NULL,
+    `status` ENUM('수강', '졸업', '제적') NOT NULL
+);
+-- 강사 테이블
+CREATE TABLE `teacher` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `registration_number` VARCHAR(50) NOT NULL UNIQUE,
+    `phone_number` VARCHAR(50) NOT NULL,
+    `address` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `experience` VARCHAR(255) NOT NULL,
+    `salary` INT NOT NULL,
+    `contract_start` DATE NOT NULL,
+    `contract_end` DATE NOT NULL,
+    `status` ENUM('등록', '휴직', '계약종료') NOT NULL
+);
+-- 도서 테이블 수정
+CREATE TABLE `book` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `manager_id` BIGINT NOT NULL,
+    `student_id` BIGINT,
+    `name` VARCHAR(255) NOT NULL,
+    `status` ENUM('대여중', '대여가능', '연체', '분실') NOT NULL DEFAULT '대여가능',
+    `rental_date` DATETIME,
+    `return_date` DATETIME,
+    FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`),
+    FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
+);
+-- 강의실 테이블 수정
+CREATE TABLE `class_room` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `capacity` INT NOT NULL
+);
+
+-- 시간표 테이블 수정
+CREATE TABLE `time_table` (
+    `class_id` BIGINT NOT NULL,
+    `start_time` DATETIME NOT NULL,
+    `end_time` DATETIME NOT NULL,
+    `class_room_id` BIGINT NOT NULL,
+    PRIMARY KEY (`class_id`, `start_time`, `end_time`),
+    FOREIGN KEY (`class_id`) REFERENCES `class` (`id`),
+    FOREIGN KEY (`class_room_id`) REFERENCES `class_room` (`id`)
+);
+-- 출석테이블 수정
+CREATE TABLE `attendance` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `class_id` BIGINT NOT NULL,
+    `start_time` DATETIME NOT NULL,
+    `end_time` DATETIME NOT NULL,
+    `student_id` BIGINT NOT NULL,
+    `status` ENUM('출석', '결석', '병가', '외출', '조퇴') NOT NULL DEFAULT '결석',
+    FOREIGN KEY (`class_id`, `start_time`, `end_time`) REFERENCES `time_table` (`class_id`, `start_time`, `end_time`),
+    FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
+);
+
+-- 성적 테이블
+CREATE TABLE `grade` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `class_id` BIGINT NOT NULL,
+    `student_id` BIGINT NOT NULL,
+    `score` INT NOT NULL CHECK (`score` >= 0 AND `score` <= 100),
+    `grade` ENUM('A', 'B', 'C', 'D', 'F') GENERATED ALWAYS AS (
+        CASE
+            WHEN `score` >= 91 THEN 'A'
+            WHEN `score` >= 81 THEN 'B'
+            WHEN `score` >= 71 THEN 'C'
+            WHEN `score` >= 61 THEN 'D'
+            ELSE 'F'
+        END
+    ) VIRTUAL,
+    FOREIGN KEY (`class_id`) REFERENCES `class` (`id`),
+    FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
+);
+
+-- 상담 테이블
+CREATE TABLE `counsel` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `student_id` BIGINT NOT NULL,
+    `manager_id` BIGINT NOT NULL,
+    `date` DATETIME NOT NULL,
+    `category` ENUM('학업', '취업', '건강', '기타') NOT NULL,
+    `detail` VARCHAR(1000),
+    FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
+    FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`)
+);
+```
+
+### 2. 데이터 추가 쿼리(DML)
