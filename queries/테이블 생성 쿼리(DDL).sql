@@ -1,4 +1,17 @@
--- 수강생 테이블
+-- 관리자 테이블
+CREATE TABLE `manager` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `registration_number` VARCHAR(50) NOT NULL UNIQUE,
+    `phone_number` VARCHAR(50) NOT NULL,
+    `experience` ENUM('신입', '경력') NOT NULL,
+    `work` ENUM('기수', '야간', '상담') NOT NULL,
+    `contract_start` DATETIME NOT NULL,
+    `contract_end` DATETIME NOT NULL,
+    `status` ENUM('근무', '연차', '휴직', '퇴직', '기타') DEFAULT '근무'
+);
+​
+-- 학생 테이블
 CREATE TABLE `student` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
@@ -8,8 +21,11 @@ CREATE TABLE `student` (
     `email` VARCHAR(255) NOT NULL,
     `major` ENUM('전공', '비전공') NOT NULL,
     `generation` VARCHAR(50) NOT NULL,
-    `status` ENUM('수강', '졸업', '제적') NOT NULL
+    `status` ENUM('수강', '졸업', '제적') NOT NULL,
+    `manager_id` BIGINT NOT NULL,
+     FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`)
 );
+​
 -- 강사 테이블
 CREATE TABLE `teacher` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -24,32 +40,8 @@ CREATE TABLE `teacher` (
     `contract_end` DATE NOT NULL,
     `status` ENUM('등록', '휴직', '계약종료') NOT NULL
 );
-
--- 관리자 테이블 수
-CREATE TABLE `manager` (
-    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `name` VARCHAR(50) NOT NULL,
-    `registration_number` VARCHAR(50) NOT NULL UNIQUE,
-    `phone_number` VARCHAR(50) NOT NULL,
-    `experience` ENUM('신입', '경력') NOT NULL,
-    `work` ENUM('기수', '야간', '상담') NOT NULL,
-    `contract_start` DATETIME NOT NULL,
-    `contract_end` DATETIME NOT NULL,
-    `status` ENUM('근무', '연차', '휴직', '퇴직', '기타') DEFAULT '근무'
-);
--- 수업 테이블 수정
-CREATE TABLE `class` (
-    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `student_id` BIGINT NOT NULL,
-    `teacher_id` BIGINT NOT NULL,
-    `name` VARCHAR(255) NOT NULL,
-    `start_time` DATETIME NOT NULL,
-    `end_time` DATETIME NOT NULL,
-    FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
-    FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)
-);
-
--- 도서 테이블 수정
+​
+-- 도서 테이블
 CREATE TABLE `book` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `manager_id` BIGINT NOT NULL,
@@ -61,14 +53,25 @@ CREATE TABLE `book` (
     FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`),
     FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
 );
--- 강의실 테이블 수정
+​
+-- 수업 테이블
+CREATE TABLE `class` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `teacher_id` BIGINT NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
+    `start_time` DATETIME NOT NULL,
+    `end_time` DATETIME NOT NULL,
+    FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`)
+);
+​
+-- 강의실 테이블
 CREATE TABLE `class_room` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
     `capacity` INT NOT NULL
 );
-
--- 시간표 테이블 수정
+​
+-- 시간표 테이블
 CREATE TABLE `time_table` (
     `class_id` BIGINT NOT NULL,
     `start_time` DATETIME NOT NULL,
@@ -78,7 +81,8 @@ CREATE TABLE `time_table` (
     FOREIGN KEY (`class_id`) REFERENCES `class` (`id`),
     FOREIGN KEY (`class_room_id`) REFERENCES `class_room` (`id`)
 );
--- 출석테이블 수정
+​
+-- 출석테이블
 CREATE TABLE `attendance` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `class_id` BIGINT NOT NULL,
@@ -89,6 +93,7 @@ CREATE TABLE `attendance` (
     FOREIGN KEY (`class_id`, `start_time`, `end_time`) REFERENCES `time_table` (`class_id`, `start_time`, `end_time`),
     FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
 );
+​
 
 -- 성적 테이블
 CREATE TABLE `grade` (
