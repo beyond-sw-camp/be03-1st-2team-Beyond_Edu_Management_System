@@ -227,4 +227,16 @@ CREATE TABLE `counsel` (
 
 
 
+
 ### 2. 데이터 추가 쿼리(DML)
+![DML 1](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/aeb9ff5b-b567-441b-9474-f54768223abd)
+> DML 명령어 중의 하나인 Insert문을 활용한 코드
+---
+![DML 2](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/90ad12e2-1889-4c02-9398-b5b8ed34d4bc)
+> 눈에 띄는 4번 학생의 상담, 조인을 통해서 4번학생의 이름과 상담 내용을 조회해보려 SELECT사용
+---
+![DML 3](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/a4f2bd7f-1c17-4a1d-9ac5-cb78a85532a9)
+> 결과, 학생의 이름과 상담내용
+---
+
+
