@@ -24,7 +24,7 @@ insert class_room(id,name,capacity) values (8,'파랑반',30);
 insert class_room(id,name,capacity) values (9,'미팅룸1',10);
 insert class_room(id,name,capacity) values (10,'미팅룸2',10);
 
--- 시간표 테이블
+-- 시간표 테이블 
 insert time_table(class_id,class_room_id,start_time,end_time) values (1,1,'2023-12-01 09:00','2023-12-01 12:00');
 insert time_table(class_id,class_room_id,start_time,end_time) values (2,2,'2023-12-01 09:00','2023-12-01 12:00');
 insert time_table(class_id,class_room_id,start_time,end_time) values (3,3,'2023-12-02 10:00','2023-12-01 11:00');
