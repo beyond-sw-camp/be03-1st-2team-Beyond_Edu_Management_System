@@ -24,6 +24,46 @@ CREATE TABLE `teacher` (
     `contract_end` DATE NOT NULL,
     `status` ENUM('등록', '휴직', '계약종료') NOT NULL
 );
+-- 도서 테이블 수정
+CREATE TABLE `book` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `manager_id` BIGINT NOT NULL,
+    `student_id` BIGINT,
+    `name` VARCHAR(255) NOT NULL,
+    `status` ENUM('대여중', '대여가능', '연체', '분실') NOT NULL DEFAULT '대여가능',
+    `rental_date` DATETIME,
+    `return_date` DATETIME,
+    FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`),
+    FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
+);
+-- 강의실 테이블 수정
+CREATE TABLE `class_room` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `capacity` INT NOT NULL
+);
+
+-- 시간표 테이블 수정
+CREATE TABLE `time_table` (
+    `class_id` BIGINT NOT NULL,
+    `start_time` DATETIME NOT NULL,
+    `end_time` DATETIME NOT NULL,
+    `class_room_id` BIGINT NOT NULL,
+    PRIMARY KEY (`class_id`, `start_time`, `end_time`),
+    FOREIGN KEY (`class_id`) REFERENCES `class` (`id`),
+    FOREIGN KEY (`class_room_id`) REFERENCES `class_room` (`id`)
+);
+-- 출석테이블 수정
+CREATE TABLE `attendance` (
+    `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `class_id` BIGINT NOT NULL,
+    `start_time` DATETIME NOT NULL,
+    `end_time` DATETIME NOT NULL,
+    `student_id` BIGINT NOT NULL,
+    `status` ENUM('출석', '결석', '병가', '외출', '조퇴') NOT NULL DEFAULT '결석',
+    FOREIGN KEY (`class_id`, `start_time`, `end_time`) REFERENCES `time_table` (`class_id`, `start_time`, `end_time`),
+    FOREIGN KEY (`student_id`) REFERENCES `student` (`id`)
+);
 
 -- 성적 테이블
 CREATE TABLE `grade` (
