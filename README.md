@@ -1,9 +1,15 @@
-# Beyond Edu Management System
+
+# <center>Beyond Edu Management System</center>
+
+
+
+![image](https://velog.velcdn.com/images/dhkdtld37/post/2cf0e364-af22-4f2b-9d37-071213f1eaca/image.PNG)
 
 
 ## 📃 프로젝트 소개
 ```
-Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리를 위한 효율적인 인적자원 관리 시스템입니다. 이 시스템은 수강생, 강사, 매니저 등 다양한 역할을 가진 사용자들을 위한 종합적인 데이터베이스를 제공하여 학원 운영을 원활하게 지원합니다.
+Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리를 위한 효율적인 인적자원 관리 시스템입니다.
+이 시스템은 수강생, 강사, 매니저 등 다양한 역할을 가진 사용자들을 위한 종합적인 데이터베이스를 제공하여 학원 운영을 지원합니다.
 ```
 
 ## 💡 프로젝트 목표
