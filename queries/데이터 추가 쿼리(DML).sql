@@ -1,5 +1,4 @@
 
-
 -- 관리자 데이터 추가
 INSERT INTO `manager` (`name`, `registration_number`, `phone_number`, `experience`, `work`, `contract_start`, `contract_end`, `status`) 
 VALUES 
@@ -90,17 +89,18 @@ VALUES
 (4, 4, '2023-04-01 17:00:00', '기타', '기타 상담 내용 4'),
 (5, 5, '2023-05-01 18:00:00', '취업', '취업 상담 내용 5');
 
-
 --학생아이디를 통해 학생 이름, 학생이 빌린 책의 이름, 빌린날짜, 반납날짜를 알 수 있는 SELECT
 SELECT s.name, b.name, b.rental_date, b.return_date 
 from book b 
 join student s on b.student_id = s.id
 where s.name = 'Student 1';
+
 --수업 번호를 통해 학생 이름, 출석 상태, 수업 번호, 수업 시작시간, 수업 종료시간을 찾는 SELECT
 SELECT s.name, a.status, a.class_id, a.start_time, a.end_time
 FROM student s
 JOIN attendance a on s.id = a.student_id
 where a.id = 1;
+
 -- 강의실 테이블
 insert class_room(id,name,capacity) values (1,'햇님반',30);
 insert class_room(id,name,capacity) values (2,'별님반',50);
