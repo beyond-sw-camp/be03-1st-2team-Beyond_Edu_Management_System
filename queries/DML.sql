@@ -1,3 +1,5 @@
+
+
 -- 관리자 데이터 추가
 INSERT INTO `manager` (`name`, `registration_number`, `phone_number`, `experience`, `work`, `contract_start`, `contract_end`, `status`) 
 VALUES 
@@ -99,7 +101,6 @@ SELECT s.name, a.status, a.class_id, a.start_time, a.end_time
 FROM student s
 JOIN attendance a on s.id = a.student_id
 where a.id = 1;
-
 -- 강의실 테이블
 insert class_room(id,name,capacity) values (1,'햇님반',30);
 insert class_room(id,name,capacity) values (2,'별님반',50);
@@ -119,3 +120,4 @@ insert time_table(class_id,class_room_id,start_time,end_time) values (3,3,'2023-
 insert time_table(class_id,class_room_id,start_time,end_time) values (4,4,'2023-12-03 12:00','2023-12-01 13:00');
 insert time_table(class_id,class_room_id,start_time,end_time) values (5,5,'2023-12-04 09:00','2023-12-01 12:00');
 insert time_table(class_id,class_room_id,start_time,end_time) values (6,1,'2023-12-01 13:00','2023-12-01 15:00');
+=======
