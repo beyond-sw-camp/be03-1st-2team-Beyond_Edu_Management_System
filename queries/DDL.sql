@@ -1,4 +1,4 @@
--- 수강생테이블
+-- 학생 테이블 수정
 CREATE TABLE `student` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
@@ -8,9 +8,13 @@ CREATE TABLE `student` (
     `email` VARCHAR(255) NOT NULL,
     `major` ENUM('전공', '비전공') NOT NULL,
     `generation` VARCHAR(50) NOT NULL,
-    `status` ENUM('수강', '졸업', '제적') NOT NULL
+    `status` ENUM('수강', '졸업', '제적') NOT NULL,
+    `manager_id` BIGINT NOT NULL,
+     FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`)
 );
--- 강사테이블
+
+
+-- 강사 테이블 수정
 CREATE TABLE `teacher` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
