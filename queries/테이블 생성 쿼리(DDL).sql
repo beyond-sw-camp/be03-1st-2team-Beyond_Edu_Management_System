@@ -25,7 +25,7 @@ CREATE TABLE `teacher` (
     `status` ENUM('등록', '휴직', '계약종료') NOT NULL
 );
 
--- 관리자 테이블 수정
+-- 관리자 테이블 수
 CREATE TABLE `manager` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
