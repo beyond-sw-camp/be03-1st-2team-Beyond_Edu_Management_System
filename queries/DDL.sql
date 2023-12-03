@@ -1,6 +1,3 @@
-<<<<<<< HEAD
--- 학생 테이블 수정
-=======
 -- 관리자 테이블
 CREATE TABLE `manager` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -15,7 +12,6 @@ CREATE TABLE `manager` (
 );
 ​
 -- 학생 테이블
->>>>>>> 547a1467e3e287710d99acde540dcb356e7fc8e4
 CREATE TABLE `student` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
@@ -29,14 +25,8 @@ CREATE TABLE `student` (
     `manager_id` BIGINT NOT NULL,
      FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`)
 );
-<<<<<<< HEAD
-
-
--- 강사 테이블 수정
-=======
 ​
 -- 강사 테이블
->>>>>>> 547a1467e3e287710d99acde540dcb356e7fc8e4
 CREATE TABLE `teacher` (
     `id` BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
@@ -50,8 +40,6 @@ CREATE TABLE `teacher` (
     `contract_end` DATE NOT NULL,
     `status` ENUM('등록', '휴직', '계약종료') NOT NULL
 );
-<<<<<<< HEAD
-=======
 ​
 -- 도서 테이블
 CREATE TABLE `book` (
@@ -137,4 +125,3 @@ CREATE TABLE `counsel` (
     FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
     FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`)
 );
->>>>>>> 547a1467e3e287710d99acde540dcb356e7fc8e4
