@@ -119,7 +119,7 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 ### 1. ERD
 
 
-![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/1fe9e932-75e4-471b-9487-e161b1885f69)
+![image](data_modeling/ERD.png)
 > pk가 복합키인 time_table이 굉장히 거슬린다.
 >> 복합키를 가지면 조인시 쿼리 복잡함, 행여나 값이 갱신되면 연관관계에 있는 테이블의 값을 수정해줘야하는 번거로움이 생기는 단점등을 가지게 된다.
 <details>
