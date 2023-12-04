@@ -137,3 +137,13 @@ FROM counsel c
 JOIN student s ON c.student_id = s.id
 JOIN manager m ON c.manager_id = m.id;
 
+-- 대여 목록 조회하는 VIEW
+CREATE VIEW book_details AS
+SELECT 
+    s.name AS 학생,
+    b.name AS 도서명,
+    b.return_date AS 반환일
+FROM book b
+JOIN student s ON b.student_id = s.id
+JOIN manager m ON b.manager_id = m.id;
+
