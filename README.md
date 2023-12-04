@@ -146,7 +146,25 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 > 뷰 만들어서 DCL 명령어 사용
 ---
 ![DCL 2](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/54ec4a14-89be-40a2-a45b-2f1be7d185f4)
-> 결과
+> manager1의 권한 조회
+---
+
+<img width="175" alt="DCL" src="https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/b722c973-ef45-4833-a35a-42ff799d39fa">
+
+> manager1 아이디로 student 테이블을 조회
+---
+
+<img width="401" alt="DCLL" src="https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/efb842ed-4d47-4848-9fe0-20cc428ce52b">
+
+> 결과는 permittion denied.
+--- 
+
+<img width="204" alt="DCLL1" src="https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/dc5c7120-e5af-4d47-bf5a-fb11d6cd54e2">
+
+
+<img width="930" alt="DCLL2" src="https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/9bf62511-7eb7-4822-85d2-a08f2a5c4708">
+
+> student_info 뷰는 정상적으로 조회 되는것을 볼 수 있다.
 
 ## ⭐ Tables
 
