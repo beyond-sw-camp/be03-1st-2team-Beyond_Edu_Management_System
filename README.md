@@ -29,7 +29,9 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 
 ## 📆 개발 일정
 
-![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/f89d1e73-ac59-4dc0-8607-c43977db30eb)
+![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/bc2c7b5d-b8f1-4613-8078-9ac4498e7bc4)
+
+
 
 
 
