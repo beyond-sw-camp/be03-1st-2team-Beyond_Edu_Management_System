@@ -192,7 +192,7 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/6cc0e5ee-9b6c-4bad-97e2-cf50ffdd1a23)
 
-<br/>
+<br/>상담받은 학생과 담당매니저, 상담 내용을 확인할 수 있다.
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/b4e5615e-f627-42a0-9ca1-962c48be2941)
 
@@ -202,7 +202,7 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/7d4e4729-1bdc-45be-b719-e4e24123fde5)
 
-<br/>
+<br/>대출한 학생과 도서명, 반납일을 확인할 수 있다.
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/26dacb34-95a7-4234-ba5a-ceafccb99a9a)
 
