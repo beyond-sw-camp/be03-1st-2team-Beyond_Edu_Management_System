@@ -125,3 +125,13 @@ CREATE TABLE `counsel` (
     FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
     FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`)
 );
+
+-- 상담 내용을 조회하는 VIEW
+CREATE VIEW student_counsel AS
+SELECT 
+    s.name AS 학생,
+    m.name AS 담당매니저,
+    c.detail AS 내용
+FROM counsel c
+JOIN student s ON c.student_id = s.id
+JOIN manager m ON c.manager_id = m.id;
