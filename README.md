@@ -209,6 +209,11 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 </div>
 </details>
 
+## 📝 TestCase
+
+![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/e7c1f7b2-066f-4429-96de-99e9eb198035)
+
+
 ## ⭐ Tables
 
 <details>
