@@ -101,3 +101,16 @@ SELECT s.name, a.status, a.class_id, a.start_time, a.end_time
 FROM student s
 JOIN attendance a on s.id = a.student_id
 where a.id = 1;
+
+
+-- 학생의 이름과 그 학생을 담당하는 매니저의 이름
+SELECT s.name AS student_name, m.name AS manager_name
+FROM student s
+INNER JOIN manager m ON s.manager_id = m.id;
+
+-- 학생의 출석 기록과 그에 따른 수업 이름
+SELECT s.name AS student_name, a.status AS attendance_status, c.name AS class_name
+FROM student s
+LEFT JOIN attendance a ON s.id = a.student_id
+LEFT JOIN time_table tt ON a.class_id = tt.class_id AND a.start_time = tt.start_time AND a.end_time = tt.end_time
+LEFT JOIN class c ON tt.class_id = c.id;
