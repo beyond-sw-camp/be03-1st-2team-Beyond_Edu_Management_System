@@ -153,19 +153,6 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 ![DML 3](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/a4f2bd7f-1c17-4a1d-9ac5-cb78a85532a9)
 > 결과, 학생의 이름과 상담내용
 
-<details>
-<summary>뷰를 이용한 조회</summary>
-<div markdown="1">
-<br/>
-
-![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/6cc0e5ee-9b6c-4bad-97e2-cf50ffdd1a23)
-
-> 학생 이름, 매니저 이름, 상담 내용 조회
-
-![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/b4e5615e-f627-42a0-9ca1-962c48be2941)
-
-</div>
-</details>
 
 
 ---
@@ -195,6 +182,32 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 <img width="930" alt="DCLL2" src="https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/9bf62511-7eb7-4822-85d2-a08f2a5c4708">
 
 > student_info 뷰는 정상적으로 조회 되는것을 볼 수 있다.
+<br/>
+<details>
+<summary>뷰를 이용한 조회</summary>
+<div markdown="1">
+<br/>
+
+> 상담 내용 조회
+
+![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/6cc0e5ee-9b6c-4bad-97e2-cf50ffdd1a23)
+
+<br/>
+
+![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/b4e5615e-f627-42a0-9ca1-962c48be2941)
+
+<br/>
+
+> 도서 대출 내역 조회
+
+![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/7d4e4729-1bdc-45be-b719-e4e24123fde5)
+
+<br/>
+
+![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/26dacb34-95a7-4234-ba5a-ceafccb99a9a)
+
+</div>
+</details>
 
 ## ⭐ Tables
 
