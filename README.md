@@ -201,44 +201,45 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 <details>
 <summary>최종 테이블</summary>
 <div markdown="1">
+<br/>
   
-#### 매니저 테이블
+> #### 매니저 테이블
   
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/a113401d-5e95-4785-8132-fc4d5c465ad2)
 
-#### 수강생 테이블
+> #### 수강생 테이블
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/ed1498bc-c6cc-4d88-9609-91f1af1fcbb4)
 
-#### 강사 테이블
+> #### 강사 테이블
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/bf8b48aa-efc5-4729-8360-522d2e3ba1b4)
 
-#### 도서 테이블
+> #### 도서 테이블
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/d96bbd2f-05c1-45a1-b22f-59a453e2f491)
 
-#### 수업 테이블
+> #### 수업 테이블
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/43ff7f77-eb19-447d-9337-60a91be1ad1d)
 
-#### 강의실 테이블
+> #### 강의실 테이블
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/3e0a27bc-94ed-4d29-8b8b-573928f2a31b)
 
-#### 시간표 테이블 
+> #### 시간표 테이블 
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/d039eb1a-f11d-4e7f-87aa-36c97a61fed4)
 
-#### 출석 테이블 
+> #### 출석 테이블 
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/990f3f3f-5bc4-4fc5-b00f-f9752e1b98fc)
 
-#### 성적 테이블  
+> #### 성적 테이블  
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/942694da-aa8a-44a6-8625-f5ff4325d38b)
 
-#### 상담 테이블
+> #### 상담 테이블
 
 ![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/8de5ccab-25a4-4bec-8491-0f80936d17e4)
 
