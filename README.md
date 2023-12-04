@@ -150,6 +150,22 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 ---
 ![DML 3](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/a4f2bd7f-1c17-4a1d-9ac5-cb78a85532a9)
 > 결과, 학생의 이름과 상담내용
+
+<details>
+<summary>뷰를 이용한 조회</summary>
+<div markdown="1">
+<br/>
+
+![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/6cc0e5ee-9b6c-4bad-97e2-cf50ffdd1a23)
+
+> 학생 이름, 매니저 이름, 상담 내용 조회
+
+![image](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/112849147/b4e5615e-f627-42a0-9ca1-962c48be2941)
+
+</div>
+</details>
+
+
 ---
 ### 3. DCL
 ![DCL 1](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/b5c60b16-e2c4-42d3-8c7a-77136b5e1b1c)
@@ -157,6 +173,8 @@ Beyond Edu Management System은 한화시스템 BEYOND SW캠프의 학원 관리
 ---
 ![DCL 2](https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/54ec4a14-89be-40a2-a45b-2f1be7d185f4)
 > manager1의 권한 조회
+
+
 ---
 
 <img width="175" alt="DCL" src="https://github.com/qoth-0/BEYOND_SWCAMP_DB_Project/assets/62212610/b722c973-ef45-4833-a35a-42ff799d39fa">
