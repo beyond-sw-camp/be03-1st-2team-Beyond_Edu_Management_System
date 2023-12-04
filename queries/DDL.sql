@@ -124,6 +124,7 @@ CREATE TABLE `counsel` (
     `detail` VARCHAR(1000),
     FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
     FOREIGN KEY (`manager_id`) REFERENCES `manager` (`id`)
+
 );
 
 -- 상담 내용을 조회하는 VIEW
@@ -135,3 +136,4 @@ SELECT
 FROM counsel c
 JOIN student s ON c.student_id = s.id
 JOIN manager m ON c.manager_id = m.id;
+
